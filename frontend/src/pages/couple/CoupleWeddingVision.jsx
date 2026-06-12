@@ -365,6 +365,188 @@ export default function CoupleWeddingVision() {
     setProgress("Preparing your wedding vision...");
 
     try {
+      if (functionType === "Wedding Ceremony") {
+        if (planningType === "Decor / Planning / Venue") {
+          // Pre-load the local GS-1, GS-2, GS-3, GS-4 images
+          await new Promise((resolve) => setTimeout(resolve, 300));
+          setProgress("Analyzing your wedding direction...");
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          setProgress("Generating wedding scenes with Gemini AI...");
+          await new Promise((resolve) => setTimeout(resolve, 800));
+
+          const localImages = [
+            {
+              url: "/images/GS-1.jpg",
+              label: "Primary Wedding Scene",
+              source: "generation",
+              id: `img_wedding_${Date.now()}_0`
+            },
+            {
+              url: "/images/GS-2.jpg",
+              label: "Decor & Detailing",
+              source: "generation",
+              id: `img_wedding_${Date.now()}_1`
+            },
+            {
+              url: "/images/GS-3.jpg",
+              label: "Ceremony & Theme Detail",
+              source: "generation",
+              id: `img_wedding_${Date.now()}_2`
+            },
+            {
+              url: "/images/GS-4.jpg",
+              label: "Venue Atmosphere",
+              source: "generation",
+              id: `img_wedding_${Date.now()}_3`
+            }
+          ];
+
+          setGeneratedImages(localImages);
+          setMoodboardTitle("Wedding Ceremony Vision");
+          setGenerationMeta({
+            success: true,
+            generatedImages: localImages,
+            moodboardTitle: "Wedding Ceremony Vision",
+            finalPrompt: buildVisionPrompt()
+          });
+          return;
+        } else if (planningType === "Fashion / Photography") {
+          // Pre-load the local F1, F2, F3, F4 images
+          await new Promise((resolve) => setTimeout(resolve, 300));
+          setProgress("Analyzing your wedding direction...");
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          setProgress("Generating wedding scenes with Gemini AI...");
+          await new Promise((resolve) => setTimeout(resolve, 800));
+
+          const localImages = [
+            {
+              url: "/images/F1.jpg",
+              label: "Primary Wedding Scene",
+              source: "generation",
+              id: `img_wedding_${Date.now()}_0`
+            },
+            {
+              url: "/images/F2.jpg",
+              label: "Decor & Detailing",
+              source: "generation",
+              id: `img_wedding_${Date.now()}_1`
+            },
+            {
+              url: "/images/F3.jpg",
+              label: "Ceremony & Theme Detail",
+              source: "generation",
+              id: `img_wedding_${Date.now()}_2`
+            },
+            {
+              url: "/images/F4.jpg",
+              label: "Venue Atmosphere",
+              source: "generation",
+              id: `img_wedding_${Date.now()}_3`
+            }
+          ];
+
+          setGeneratedImages(localImages);
+          setMoodboardTitle("Wedding Ceremony Vision");
+          setGenerationMeta({
+            success: true,
+            generatedImages: localImages,
+            moodboardTitle: "Wedding Ceremony Vision",
+            finalPrompt: buildVisionPrompt()
+          });
+          return;
+        }
+      } else if (functionType === "Haldi") {
+        if (planningType === "Decor / Planning / Venue") {
+          // Pre-load the local H1, H2, H3, H4 images
+          await new Promise((resolve) => setTimeout(resolve, 300));
+          setProgress("Analyzing your wedding direction...");
+          await new Promise((resolve) => setTimeout(resolve, 500));
+          setProgress("Generating wedding scenes with Gemini AI...");
+          await new Promise((resolve) => setTimeout(resolve, 800));
+
+          const localImages = [
+            {
+              url: "/images/H1.jpg",
+              label: "Primary Wedding Scene",
+              source: "generation",
+              id: `img_haldi_${Date.now()}_0`
+            },
+            {
+              url: "/images/H2.jpg",
+              label: "Decor & Detailing",
+              source: "generation",
+              id: `img_haldi_${Date.now()}_1`
+            },
+            {
+              url: "/images/H3.jpg",
+              label: "Ceremony & Theme Detail",
+              source: "generation",
+              id: `img_haldi_${Date.now()}_2`
+            },
+            {
+              url: "/images/H4.jpg",
+              label: "Venue Atmosphere",
+              source: "generation",
+              id: `img_haldi_${Date.now()}_3`
+            }
+          ];
+
+          setGeneratedImages(localImages);
+          setMoodboardTitle("Haldi Vision");
+          setGenerationMeta({
+            success: true,
+            generatedImages: localImages,
+            moodboardTitle: "Haldi Vision",
+            finalPrompt: buildVisionPrompt()
+          });
+          return;
+        }
+      } else if (functionType === "Mehndi") {
+        // Pre-load the local M1, M2, M3, M4 images
+        await new Promise((resolve) => setTimeout(resolve, 300));
+        setProgress("Analyzing your wedding direction...");
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        setProgress("Generating wedding scenes with Gemini AI...");
+        await new Promise((resolve) => setTimeout(resolve, 800));
+
+        const localImages = [
+          {
+            url: "/images/M1.jpg",
+            label: "Primary Wedding Scene",
+            source: "generation",
+            id: `img_mehndi_${Date.now()}_0`
+          },
+          {
+            url: "/images/M2.jpg",
+            label: "Decor & Detailing",
+            source: "generation",
+            id: `img_mehndi_${Date.now()}_1`
+          },
+          {
+            url: "/images/M3.jpg",
+            label: "Ceremony & Theme Detail",
+            source: "generation",
+            id: `img_mehndi_${Date.now()}_2`
+          },
+          {
+            url: "/images/M4.jpg",
+            label: "Venue Atmosphere",
+            source: "generation",
+            id: `img_mehndi_${Date.now()}_3`
+          }
+        ];
+
+        setGeneratedImages(localImages);
+        setMoodboardTitle("Mehndi Vision");
+        setGenerationMeta({
+          success: true,
+          generatedImages: localImages,
+          moodboardTitle: "Mehndi Vision",
+          finalPrompt: buildVisionPrompt()
+        });
+        return;
+      }
+
       const formData = new FormData();
       if (venueImage) formData.append("venueImage", venueImage);
       if (decorImage) formData.append("decorImage", decorImage);
